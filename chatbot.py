@@ -34,7 +34,7 @@ def get_db_schema():
             dbname="postgres",
             user="postgres",
             password="postgres",
-            host="localhost",
+            host=os.getenv("DB_HOST", "localhost"),
             port="5432"
         )
         cur = conn.cursor()
