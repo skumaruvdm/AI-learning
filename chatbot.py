@@ -1,12 +1,8 @@
 import streamlit as st
 import psycopg2
 import os
-from dotenv import load_dotenv
 from google import genai
 import pandas as pd
-
-# Load environment variables
-load_dotenv()
 
 # Configure Gemini
 api_key = os.getenv("GOOGLE_API_KEY")
@@ -119,7 +115,7 @@ def main():
                         dbname="postgres",
                         user="postgres",
                         password="postgres",
-                        host="localhost",
+                        host=os.getenv("DB_HOST", "localhost"),
                         port="5432"
                     )
                     cur = conn.cursor()

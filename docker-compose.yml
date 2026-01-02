@@ -11,8 +11,10 @@ services:
   chatbot:
     build: .
     restart: always
-    env_file:
-      - .env
+    environment:
+      - DB_HOST=db
+      - GOOGLE_API_KEY=${GOOGLE_API_KEY}
+      - MODEL_ID=${MODEL_ID}
     ports:
       - "8501:8501"
     depends_on:
