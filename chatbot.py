@@ -4,7 +4,7 @@ import os
 from google import genai
 import pandas as pd
 
-# Configure Gemini
+# Configure Gemini AI
 api_key = os.getenv("GOOGLE_API_KEY")
 print("api_key:", api_key)  # Debugging line to check if the API key is loaded
 if not api_key:
